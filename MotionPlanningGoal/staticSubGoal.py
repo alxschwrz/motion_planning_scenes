@@ -98,10 +98,11 @@ class StaticSubGoal(SubGoal):
                     basePosition,
                     baseOrientation,
         )
-
-        if self.angle():
-            for i in range(3):
-                self.addAxisComponent(pybullet, i, position)
+        
+        # NO ANGLES, BUT POINTING VECTOR
+        #if self.angle():
+        #    for i in range(3):
+        #        self.addAxisComponent(pybullet, i, position)
 
     def addAxisComponent(self, pybullet, i, goal_position):
         rgbaColor = [0.0, 0.0, 0.0, 0.3]
