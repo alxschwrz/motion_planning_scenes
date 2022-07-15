@@ -107,7 +107,7 @@ class StaticSubGoal(SubGoal):
 
     def addPointingVector(self, pybullet, goal_position):
         pointing_vector = self.angle() # actually pointing vector, instead of angle
-        pybullet.addUserDebugLine(lineFromXYZ=goal_position,
+        pybullet.addUserDebugLine(lineFromXYZ=np.array(goal_position),
                            lineToXYZ=goal_position + pointing_vector,
                            lineColorRGB=(0, 128, 0),
                            lineWidth=10,
