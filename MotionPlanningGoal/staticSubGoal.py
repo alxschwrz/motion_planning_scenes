@@ -100,10 +100,19 @@ class StaticSubGoal(SubGoal):
         )
         
         # NO ANGLES, BUT POINTING VECTOR
-        #if self.angle():
-        #    for i in range(3):
-        #        self.addAxisComponent(pybullet, i, position)
+        if self.angle():
+            for i in range(3):
+                #self.addAxisComponent(pybullet, i, position)
+                self.addPointingVector(pybullet, goal_position)
 
+    def addPointingVector(self, pybullet, goal_position):
+        pointing_vector = self.angle() # actually pointing vector, instead of angle
+        pybullet.addUserDebugLine(lineFromXYZ=goal_position,
+                           lineToXYZ=goal_position + pointing_vector,
+                           lineColorRGB=(0, 128, 0),
+                           lineWidth=10,
+                           lifeTime=0.1)
+    
     def addAxisComponent(self, pybullet, i, goal_position):
         rgbaColor = [0.0, 0.0, 0.0, 0.3]
         angles = self.angle()
