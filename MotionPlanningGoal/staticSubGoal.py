@@ -103,7 +103,7 @@ class StaticSubGoal(SubGoal):
         if self.angle():
             for i in range(3):
                 #self.addAxisComponent(pybullet, i, position)
-                self.addPointingVector(pybullet, goal_position)
+                self.addPointingVector(pybullet, position)
 
     def addPointingVector(self, pybullet, goal_position):
         pointing_vector = self.angle() # actually pointing vector, instead of angle
