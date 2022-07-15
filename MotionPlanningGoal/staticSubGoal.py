@@ -111,7 +111,7 @@ class StaticSubGoal(SubGoal):
                            lineToXYZ=np.array(goal_position) + pointing_vector,
                            lineColorRGB=(0, 128, 0),
                            lineWidth=10,
-                           lifeTime=0.1)
+                           lifeTime=10)
     
     def addAxisComponent(self, pybullet, i, goal_position):
         rgbaColor = [0.0, 0.0, 0.0, 0.3]
